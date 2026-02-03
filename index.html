@@ -33,7 +33,8 @@
             z-index: 100;
         }
 
-        .logo-img { height: 80px; } 
+        /* LOGO AUMENTADA PARA 100PX */
+        .logo-img { height: 100px; } 
         
         .btn-header {
             background-color: var(--primary-green);
@@ -50,8 +51,8 @@
         .hero {
             background-color: var(--primary-green);
             color: white;
-            /* AUMENTADO O PADDING DE BAIXO PARA 220PX PARA O CARD NÃO COBRIR O TEXTO */
-            padding: 60px 5% 220px 5%; 
+            /* ESPAÇO INFERIOR AUMENTADO PARA 250PX */
+            padding: 60px 5% 250px 5%; 
             text-align: center;
             display: flex;
             flex-direction: column;
@@ -71,8 +72,8 @@
             max-width: 480px;
             width: 100%;
             text-align: center;
-            /* SUBIDA DE 150PX PARA ENCAIXAR NO ESPAÇO NOVO */
-            margin-top: -150px; 
+            /* MARGEM NEGATIVA REDUZIDA PARA -100PX (SOBE MENOS) */
+            margin-top: -100px; 
             position: relative;
             z-index: 10;
         }
@@ -206,9 +207,8 @@
         /* Responsividade */
         @media (max-width: 768px) {
             .hero h1 { font-size: 2rem; }
-            .logo-img { height: 60px; }
-            /* Ajuste para celular também não encavalar */
-            .hero { padding-bottom: 120px; }
+            .logo-img { height: 70px; } /* Logo um pouco menor no celular */
+            .hero { padding-bottom: 150px; }
             .simulator-card { padding: 25px; margin-top: -80px; }
             .cta-button { padding: 15px 20px; font-size: 1.1rem; }
         }
@@ -325,7 +325,7 @@
             window.open(url, '_blank');
         }
 
-        // SSSSSScript para o Accordion (FAQ)
+        // Script para o Accordion (FAQ)
         const faqs = document.querySelectorAll(".faq-question");
         faqs.forEach(faq => {
             faq.addEventListener("click", () => {
