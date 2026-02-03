@@ -33,7 +33,8 @@
             z-index: 100;
         }
 
-        .logo-img { height: 60px; } /* Ajuste o tamanho da logo aqui */
+        /* LOGO MAIOR NO HEADER */
+        .logo-img { height: 80px; } 
         
         .btn-header {
             background-color: var(--primary-green);
@@ -46,152 +47,168 @@
         }
         .btn-header:hover { background-color: var(--primary-orange); color: var(--primary-green); }
 
-        /* --- HERO SECTION (Topo) --- */
+        /* --- HERO SECTION (Topo estilo Enova) --- */
         .hero {
-            background: linear-gradient(135deg, var(--primary-green) 0%, #146c52 100%);
+            background-color: var(--primary-green); /* Fundo verde sólido */
             color: white;
-            padding: 60px 5%;
+            padding: 60px 5% 100px 5%; /* Mais espaço embaixo para o card */
             text-align: center;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
 
-        .hero h1 { font-size: 2.5rem; margin-bottom: 15px; }
-        .hero p { font-size: 1.2rem; margin-bottom: 30px; max-width: 600px; }
+        .hero h1 { font-size: 2.8rem; margin-bottom: 20px; line-height: 1.2; }
+        .hero p { font-size: 1.2rem; margin-bottom: 30px; max-width: 700px; }
         .highlight { color: var(--accent-yellow); font-weight: bold; }
 
         /* --- SIMULADOR --- */
         .simulator-card {
             background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-            max-width: 450px;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            max-width: 480px;
             width: 100%;
             text-align: center;
-            margin-top: -20px;
-            border-top: 5px solid var(--primary-orange);
+            margin-top: -80px; /* Sobe o card para cima do fundo verde */
+            position: relative;
+            z-index: 10;
         }
 
-        .input-group { margin-bottom: 20px; text-align: left; }
-        .input-group label { display: block; margin-bottom: 8px; font-weight: bold; color: var(--primary-green); }
+        .input-group { margin-bottom: 25px; text-align: left; }
+        .input-group label { display: block; margin-bottom: 10px; font-weight: bold; color: var(--primary-green); font-size: 1.1rem; }
         .input-group input {
             width: 100%;
             padding: 15px;
             border: 2px solid #ddd;
-            border-radius: 8px;
-            font-size: 1rem;
+            border-radius: 10px;
+            font-size: 1.1rem;
             outline: none;
+            transition: 0.3s;
         }
-        .input-group input:focus { border-color: var(--primary-orange); }
+        .input-group input:focus { border-color: var(--primary-orange); box-shadow: 0 0 8px rgba(255, 179, 0, 0.3); }
 
         .result-box {
             background-color: #e8f5e9;
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            display: none; /* Escondido inicialmente */
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            display: none;
+            border: 2px solid var(--success);
         }
-        .result-text { font-size: 1.1rem; color: var(--primary-green); }
-        .saving-value { font-size: 1.8rem; font-weight: bold; color: var(--success); display: block; margin-top: 5px; }
+        .result-text { font-size: 1.2rem; color: var(--primary-green); font-weight: bold; }
+        .saving-value { font-size: 2.2rem; font-weight: 800; color: var(--success); display: block; margin: 10px 0; }
 
         .cta-button {
             background-color: var(--primary-orange);
             color: var(--primary-green);
             border: none;
-            padding: 15px 30px;
-            font-size: 1.2rem;
-            font-weight: bold;
+            padding: 18px 30px;
+            font-size: 1.3rem;
+            font-weight: 800;
             border-radius: 50px;
             cursor: pointer;
             width: 100%;
             display: block;
             text-decoration: none;
-            transition: transform 0.2s;
-            box-shadow: 0 4px 15px rgba(255, 179, 0, 0.4);
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 15px rgba(255, 179, 0, 0.5);
+            text-transform: uppercase;
         }
-        .cta-button:hover { transform: scale(1.05); filter: brightness(1.05); }
+        .cta-button:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(255, 179, 0, 0.6); }
 
         /* --- COMO FUNCIONA --- */
-        .steps-section { padding: 60px 5%; text-align: center; background-color: white; }
-        .section-title { color: var(--primary-green); font-size: 2rem; margin-bottom: 40px; }
+        .steps-section { padding: 100px 5% 60px; text-align: center; background-color: white; }
+        .section-title { color: var(--primary-green); font-size: 2.2rem; margin-bottom: 50px; }
         
         .steps-container {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 30px;
+            gap: 40px;
         }
 
         .step-card {
             flex: 1;
-            min-width: 250px;
-            max-width: 300px;
-            padding: 20px;
-            border: 1px solid #eee;
-            border-radius: 10px;
+            min-width: 280px;
+            max-width: 350px;
+            padding: 30px;
+            border-radius: 15px;
+            background-color: #fff;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: 0.3s;
         }
+        .step-card:hover { transform: translateY(-10px); }
+        
         .step-number {
             background-color: var(--primary-orange);
             color: var(--primary-green);
-            width: 40px;
-            height: 40px;
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: bold;
-            margin: 0 auto 15px;
-            font-size: 1.2rem;
+            font-weight: 800;
+            margin: 0 auto 20px;
+            font-size: 1.5rem;
         }
-        .step-card h3 { color: var(--primary-green); margin-bottom: 10px; }
+        .step-card h3 { color: var(--primary-green); margin-bottom: 15px; font-size: 1.4rem; }
 
         /* --- FAQ --- */
-        .faq-section { padding: 60px 5%; max-width: 800px; margin: 0 auto; }
-        .faq-item { margin-bottom: 15px; border-bottom: 1px solid #ddd; }
+        .faq-section { padding: 60px 5%; max-width: 900px; margin: 0 auto; }
+        .faq-item { margin-bottom: 15px; border: 1px solid #ddd; border-radius: 10px; overflow: hidden; }
         .faq-question {
             width: 100%;
             text-align: left;
-            background: none;
+            background: white;
             border: none;
-            padding: 15px 0;
-            font-size: 1.1rem;
+            padding: 20px;
+            font-size: 1.2rem;
             font-weight: bold;
             color: var(--primary-green);
             cursor: pointer;
             display: flex;
             justify-content: space-between;
+            align-items: center;
         }
-        .faq-answer { display: none; padding-bottom: 15px; color: #555; }
+        .faq-answer { display: none; padding: 0 20px 20px; color: #555; background: white; font-size: 1.05rem; }
         .faq-item.active .faq-answer { display: block; }
-        .faq-icon { transition: 0.3s; }
+        .faq-icon { transition: 0.3s; font-size: 0.8rem; }
         .faq-item.active .faq-icon { transform: rotate(180deg); }
 
         /* --- FOOTER --- */
         footer {
             background-color: var(--primary-green);
             color: white;
-            padding: 40px 5%;
+            padding: 50px 5%;
             text-align: center;
         }
+        /* LOGO MAIOR NO FOOTER */
+        footer img { height: 60px; margin-bottom: 20px; filter: brightness(0) invert(1); }
+
         .whatsapp-float {
             position: fixed;
-            bottom: 20px;
-            right: 20px;
+            bottom: 25px;
+            right: 25px;
             background-color: #25d366;
             color: white;
-            padding: 15px;
+            padding: 18px;
             border-radius: 50%;
-            font-size: 30px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            font-size: 32px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
             z-index: 200;
+            transition: 0.3s;
         }
+        .whatsapp-float:hover { transform: scale(1.1); }
 
         /* Responsividade */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 1.8rem; }
-            .steps-container { flex-direction: column; align-items: center; }
+            .hero h1 { font-size: 2rem; }
+            .logo-img { height: 60px; }
+            .simulator-card { padding: 25px; margin-top: -40px; }
+            .cta-button { padding: 15px 20px; font-size: 1.1rem; }
         }
     </style>
 </head>
@@ -203,12 +220,12 @@
     </header>
 
     <section class="hero">
-        <h1>Economize na sua conta de luz <br><span class="highlight">sem gastar nada agora</span></h1>
-        <p>Reduza sua fatura de energia todos os meses com a assinatura solar da Solee. Sem obras, sem investimento e 100% digital.</p>
+        <h1>Economize na conta de energia <br><span class="highlight">sem gastar nada</span></h1>
+        <p>Reduza sua fatura de luz todos os meses com a assinatura solar da Solee. Sem obras, sem investimento e 100% digital.</p>
         
         <div id="simulador" class="simulator-card">
-            <h2>Quanto você paga de luz?</h2>
-            <p style="font-size: 0.9rem; margin-bottom: 20px; color: #666;">Digite o valor médio da sua conta:</p>
+            <h2>Qual o valor da sua conta?</h2>
+            <p style="font-size: 1rem; margin-bottom: 25px; color: #666;">Digite o valor médio mensal para ver seu desconto.</p>
             
             <div class="input-group">
                 <label for="valorConta">R$ Valor da Conta</label>
@@ -216,9 +233,9 @@
             </div>
 
             <div id="resultado" class="result-box">
-                <p class="result-text">Sua economia anual estimada:</p>
+                <p class="result-text">Sua economia MENSAL estimada:</p>
                 <span id="valorEconomia" class="saving-value">R$ 0,00</span>
-                <p style="font-size: 0.8rem; margin-top: 5px; color: #555;">*Valor estimado de até 15% de desconto.</p>
+                <p style="font-size: 0.9rem; margin-top: 10px; color: #555; font-weight: 500;">*Desconto aplicado todos os meses na sua fatura.</p>
             </div>
 
             <a href="#" onclick="redirecionarWhatsapp()" class="cta-button">QUERO ESSE DESCONTO</a>
@@ -264,13 +281,13 @@
     </section>
 
     <footer>
-        <img src="logo.png" alt="Solee" style="height: 40px; margin-bottom: 20px; filter: brightness(0) invert(1);">
+        <img src="logo.png" alt="Solee">
         <p>Solee Energia Solar &copy; 2024</p>
         <p>Economia inteligente e sustentável.</p>
     </footer>
 
     <a href="#" onclick="redirecionarWhatsapp()" class="whatsapp-float">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
             <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592z"/>
         </svg>
     </a>
@@ -282,11 +299,10 @@
             const valorEconomiaSpan = document.getElementById('valorEconomia');
             
             if (input > 0) {
-                // Cálculo de 15% de economia anual (Valor * 0.15 * 12 meses)
+                // CÁLCULO ALTERADO PARA ECONOMIA MENSAL (Apenas 15%)
                 const economiaMensal = input * 0.15;
-                const economiaAnual = economiaMensal * 12;
                 
-                valorEconomiaSpan.innerText = economiaAnual.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+                valorEconomiaSpan.innerText = economiaMensal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
                 resultadoDiv.style.display = 'block';
             } else {
                 resultadoDiv.style.display = 'none';
@@ -295,13 +311,13 @@
 
         function redirecionarWhatsapp() {
             const valor = document.getElementById('valorConta').value;
+            const economia = document.getElementById('valorEconomia').innerText;
             let texto = "Olá, gostaria de saber mais sobre a assinatura Solee.";
             
-            if (valor) {
-                texto = `Olá, fiz uma simulação no site. Minha conta é R$ ${valor} e quero garantir minha economia com a Solee.`;
+            if (valor && economia !== "R$ 0,00") {
+                texto = `Olá! Fiz uma simulação no site. Minha conta é R$ ${valor} e vi que posso economizar ${economia} por mês. Quero garantir esse desconto com a Solee.`;
             }
             
-            // Número formatado para API do WhatsApp
             const telefone = "5582981459128"; 
             const url = `https://wa.me/${telefone}?text=${encodeURIComponent(texto)}`;
             window.open(url, '_blank');
