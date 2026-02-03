@@ -20,7 +20,7 @@
 
         body { background-color: var(--bg-light); color: var(--text-dark); line-height: 1.6; }
 
-        /* --- HEADER -------------- */
+        /* --- HEADER --- */
         header {
             background-color: #fff;
             padding: 15px 5%;
@@ -33,7 +33,6 @@
             z-index: 100;
         }
 
-        /* LOGO MAIOR NO HEADER */
         .logo-img { height: 80px; } 
         
         .btn-header {
@@ -47,11 +46,12 @@
         }
         .btn-header:hover { background-color: var(--primary-orange); color: var(--primary-green); }
 
-        /* --- HERO SECTION (Topo estilo Enova) --- */
+        /* --- HERO SECTION (Topo) --- */
         .hero {
-            background-color: var(--primary-green); /* Fundo verde sólido */
+            background-color: var(--primary-green);
             color: white;
-            padding: 60px 5% 100px 5%; /* Mais espaço embaixo para o card */
+            /* AUMENTADO O PADDING DE BAIXO PARA 220PX PARA O CARD NÃO COBRIR O TEXTO */
+            padding: 60px 5% 220px 5%; 
             text-align: center;
             display: flex;
             flex-direction: column;
@@ -59,7 +59,7 @@
         }
 
         .hero h1 { font-size: 2.8rem; margin-bottom: 20px; line-height: 1.2; }
-        .hero p { font-size: 1.2rem; margin-bottom: 30px; max-width: 700px; }
+        .hero p { font-size: 1.2rem; margin-bottom: 0px; max-width: 700px; }
         .highlight { color: var(--accent-yellow); font-weight: bold; }
 
         /* --- SIMULADOR --- */
@@ -71,7 +71,8 @@
             max-width: 480px;
             width: 100%;
             text-align: center;
-            margin-top: -80px; /* Sobe o card para cima do fundo verde */
+            /* SUBIDA DE 150PX PARA ENCAIXAR NO ESPAÇO NOVO */
+            margin-top: -150px; 
             position: relative;
             z-index: 10;
         }
@@ -119,7 +120,7 @@
         .cta-button:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(255, 179, 0, 0.6); }
 
         /* --- COMO FUNCIONA --- */
-        .steps-section { padding: 100px 5% 60px; text-align: center; background-color: white; }
+        .steps-section { padding: 80px 5% 60px; text-align: center; background-color: white; }
         .section-title { color: var(--primary-green); font-size: 2.2rem; margin-bottom: 50px; }
         
         .steps-container {
@@ -185,7 +186,6 @@
             padding: 50px 5%;
             text-align: center;
         }
-        /* LOGO MAIOR NO FOOTER */
         footer img { height: 60px; margin-bottom: 20px; filter: brightness(0) invert(1); }
 
         .whatsapp-float {
@@ -207,7 +207,9 @@
         @media (max-width: 768px) {
             .hero h1 { font-size: 2rem; }
             .logo-img { height: 60px; }
-            .simulator-card { padding: 25px; margin-top: -40px; }
+            /* Ajuste para celular também não encavalar */
+            .hero { padding-bottom: 120px; }
+            .simulator-card { padding: 25px; margin-top: -80px; }
             .cta-button { padding: 15px 20px; font-size: 1.1rem; }
         }
     </style>
@@ -299,7 +301,7 @@
             const valorEconomiaSpan = document.getElementById('valorEconomia');
             
             if (input > 0) {
-                // CÁLCULO ALTERADO PARA ECONOMIA MENSAL (Apenas 15%)
+                // Cálculo de 15% de economia mensal
                 const economiaMensal = input * 0.15;
                 
                 valorEconomiaSpan.innerText = economiaMensal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
