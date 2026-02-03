@@ -28,15 +28,13 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            /* REMOVIDA A ALTURA FIXA PARA NÃO CORTAR A LOGO */
             min-height: 100px; 
         }
 
-        /* LOGO COM TAMANHO AJUSTADO PARA NÃO CORTAR */
         .logo-img { 
-            height: 130px; /* Tamanho grande, mas equilibrado */
+            height: 130px; 
             margin: 5px 0;
-            object-fit: contain; /* Garante que a imagem não distorça */
+            object-fit: contain;
         } 
         
         .btn-header {
@@ -47,7 +45,9 @@
             border-radius: 50px;
             font-weight: bold;
             font-size: 1rem;
+            transition: 0.3s;
         }
+        .btn-header:hover { background-color: var(--primary-orange); color: var(--primary-green); }
 
         /* --- HERO (Fundo Verde) --- */
         .hero {
@@ -105,6 +105,11 @@
             display: block; text-decoration: none; box-shadow: 0 4px 15px rgba(255, 179, 0, 0.5);
         }
         .cta-button:hover { transform: scale(1.02); }
+        
+        .form-link {
+            display: block; margin-top: 15px; color: #555; text-decoration: underline; font-size: 0.9rem;
+        }
+        .form-link:hover { color: var(--primary-green); font-weight: bold; }
 
         /* --- VANTAGENS --- */
         .advantages-section {
@@ -193,8 +198,25 @@
         .faq-answer { display: none; padding: 0 20px 20px; color: #555; }
         .faq-item.active .faq-answer { display: block; }
 
+        /* --- NOVA SEÇÃO FINAL CTA --- */
+        .final-cta {
+            background-color: var(--primary-green);
+            color: white;
+            text-align: center;
+            padding: 80px 5%;
+        }
+        .final-cta h2 { font-size: 2.2rem; margin-bottom: 20px; }
+        .final-cta p { font-size: 1.2rem; margin-bottom: 40px; }
+        .btn-white {
+            background-color: white; color: var(--primary-green);
+            padding: 15px 40px; font-size: 1.2rem; font-weight: bold; border-radius: 50px;
+            text-decoration: none; transition: 0.3s;
+        }
+        .btn-white:hover { background-color: var(--primary-orange); color: var(--primary-green); }
+
+
         /* --- FOOTER --- */
-        footer { background-color: var(--primary-green); color: white; padding: 50px 5%; text-align: center; }
+        footer { background-color: #0b3d2e; color: white; padding: 50px 5%; text-align: center; } /* Um verde levemente mais escuro */
         
         footer img { height: 120px; margin-bottom: 20px; } 
 
@@ -215,7 +237,7 @@
 
     <header>
         <img src="logo.png" alt="Solee" class="logo-img">
-        <a href="#simulador" class="btn-header">Simular</a>
+        <a href="https://forms.gle/4K6rACinqYcpVx9v7" target="_blank" class="btn-header">Fazer Cadastro</a>
     </header>
 
     <section class="hero">
@@ -240,6 +262,8 @@
             </div>
 
             <a href="#" onclick="redirecionarWhatsapp()" class="cta-button">QUERO ESSE DESCONTO</a>
+            
+            <a href="https://forms.gle/4K6rACinqYcpVx9v7" target="_blank" class="form-link">Prefere agilizar? Preencha seu cadastro aqui.</a>
         </div>
     </div>
 
@@ -338,6 +362,12 @@
         </div>
     </section>
 
+    <section class="final-cta">
+        <h2>Pronto para economizar na sua conta?</h2>
+        <p>Preencha nosso formulário de cadastro em poucos minutos e garanta sua vaga na usina.</p>
+        <a href="https://forms.gle/4K6rACinqYcpVx9v7" target="_blank" class="btn-white">PREENCHER CADASTRO</a>
+    </section>
+
     <footer>
         <img src="logo.png" alt="Solee">
         <p>Solee Energia Solar &copy; 2026</p>
@@ -355,7 +385,7 @@
             const resDiv = document.getElementById('resultado');
             const ecoSpan = document.getElementById('valorEconomia');
             if (input > 0) {
-                // MANTIDO 15% (0.15) CONFORME SOLICITADO
+                // MANTIDO 15% (0.15)
                 const eco = input * 0.15;
                 ecoSpan.innerText = eco.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
                 resDiv.style.display = 'block';
