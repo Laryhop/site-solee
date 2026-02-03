@@ -200,7 +200,7 @@
         .faq-answer { display: none; padding: 0 20px 20px; color: #555; }
         .faq-item.active .faq-answer { display: block; }
 
-        /* --- NOVA SEÇÃO FINAL CTA --- */
+        /* --- SEÇÃO FINAL CTA --- */
         .final-cta {
             background-color: var(--primary-green);
             color: white;
@@ -216,16 +216,32 @@
         }
         .btn-white:hover { background-color: var(--primary-orange); color: var(--primary-green); }
 
-
         /* --- FOOTER --- */
         footer { background-color: #0b3d2e; color: white; padding: 50px 5%; text-align: center; } 
-        
         footer img { height: 120px; margin-bottom: 20px; } 
 
+        /* --- CORREÇÃO DO BOTÃO WHATSAPP --- */
         .whatsapp-float {
-            position: fixed; bottom: 25px; right: 25px; background-color: #25d366; color: white;
-            padding: 15px; border-radius: 50%; font-size: 32px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 200;
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: #25d366;
+            color: white;
+            /* Dimensões fixas para garantir que fique redondo */
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            /* Centralização perfeita do ícone */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* Sombras e transição */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            z-index: 200;
+            transition: 0.3s;
         }
+        .whatsapp-float:hover { transform: scale(1.1); }
+        .whatsapp-float svg { width: 32px; height: 32px; }
 
         @media (max-width: 768px) {
             .hero { padding-bottom: 140px; }
