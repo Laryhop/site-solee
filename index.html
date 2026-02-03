@@ -27,11 +27,17 @@
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             position: sticky;
             top: 0;
-            z-index: 100;
-            height: 100px;
+            z-index: 1000;
+            /* REMOVIDA A ALTURA FIXA PARA NÃO CORTAR A LOGO */
+            min-height: 100px; 
         }
 
-        .logo-img { height: 140px; margin-top: 10px; } 
+        /* LOGO COM TAMANHO AJUSTADO PARA NÃO CORTAR */
+        .logo-img { 
+            height: 130px; /* Tamanho grande, mas equilibrado */
+            margin: 5px 0;
+            object-fit: contain; /* Garante que a imagem não distorça */
+        } 
         
         .btn-header {
             background-color: var(--primary-green);
@@ -66,7 +72,7 @@
             margin-top: -120px; 
             position: relative;
             z-index: 10;
-            margin-bottom: 80px; /* Espaço antes das vantagens */
+            margin-bottom: 80px;
         }
 
         .simulator-card {
@@ -100,17 +106,17 @@
         }
         .cta-button:hover { transform: scale(1.02); }
 
-        /* --- NOVA SEÇÃO: VANTAGENS (Estilo Enova) --- */
+        /* --- VANTAGENS --- */
         .advantages-section {
-            padding: 0 5% 80px;
+            padding: 0 5% 60px;
             text-align: center;
         }
         
-        .section-title { color: var(--primary-green); font-size: 2.2rem; margin-bottom: 50px; }
+        .section-title { color: var(--primary-green); font-size: 2.2rem; margin-bottom: 40px; }
 
         .advantages-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); /* Responsivo automático */
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 30px;
             max-width: 1200px;
             margin: 0 auto;
@@ -123,15 +129,13 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
             transition: 0.3s;
             border: 1px solid #eee;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            display: flex; flex-direction: column; align-items: center;
         }
         .advantage-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
 
         .icon-box {
             width: 70px; height: 70px;
-            background-color: #fff8e1; /* Fundo amarelo bem claro */
+            background-color: #fff8e1;
             color: var(--primary-orange);
             border-radius: 50%;
             display: flex; align-items: center; justify-content: center;
@@ -142,19 +146,37 @@
         .advantage-card h3 { color: var(--primary-green); margin-bottom: 10px; font-size: 1.2rem; }
         .advantage-card p { font-size: 0.95rem; color: #555; line-height: 1.5; }
 
+        /* --- TEXTO EXPLICATIVO --- */
+        .info-section {
+            background-color: white;
+            padding: 60px 5%;
+            text-align: center;
+            margin-top: 40px;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+        }
+        .info-content {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.15rem;
+            color: #444;
+            line-height: 1.8;
+        }
+        .info-content strong { color: var(--primary-green); }
 
-        /* --- COMO FUNCIONA --- */
-        .steps-section { padding: 40px 5% 80px; text-align: center; background-color: white; }
+
+        /* --- COMO FUNCIONA (ICONES) --- */
+        .steps-section { padding: 60px 5% 80px; text-align: center; background-color: var(--bg-light); }
         
         .steps-container {
             display: flex; flex-wrap: wrap; justify-content: center; gap: 30px;
         }
         .step-card {
             flex: 1; min-width: 280px; max-width: 350px; padding: 30px;
-            background: #f9f9f9; border-radius: 15px; /* Cinza claro para diferenciar */
+            background: white; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
         .step-number {
-            background-color: var(--primary-green); color: white; /* Inverti as cores aqui para variar */
+            background-color: var(--primary-green); color: white;
             width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
             font-weight: bold; margin: 0 auto 15px; font-size: 1.2rem;
         }
@@ -171,8 +193,10 @@
         .faq-answer { display: none; padding: 0 20px 20px; color: #555; }
         .faq-item.active .faq-answer { display: block; }
 
+        /* --- FOOTER --- */
         footer { background-color: var(--primary-green); color: white; padding: 50px 5%; text-align: center; }
-        footer img { height: 80px; margin-bottom: 20px; filter: brightness(0) invert(1); }
+        
+        footer img { height: 120px; margin-bottom: 20px; } 
 
         .whatsapp-float {
             position: fixed; bottom: 25px; right: 25px; background-color: #25d366; color: white;
@@ -196,7 +220,7 @@
 
     <section class="hero">
         <h1>Economize na conta de energia <br><span class="highlight">sem gastar nada</span></h1>
-        <p>Reduza sua fatura de luz todos os meses com a assinatura solar da Solee. Sem obras, sem investimento e 100% digital.</p>
+        <p>Reduza sua fatura de luz todo mês com a assinatura da Solee Energia Solar. Sem obras, sem investimento e 100% digital.</p>
     </section>
 
     <div class="card-section">
@@ -231,9 +255,8 @@
                     </svg>
                 </div>
                 <h3>100% Digital</h3>
-                <p>Você adere à assinatura de forma digital, pelo celular, sem burocracias e sem fidelidade.</p>
+                <p>Você adere à assinatura de forma digital, pelo celular, sem burocracias.</p>
             </div>
-
             <div class="advantage-card">
                 <div class="icon-box">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
@@ -243,7 +266,6 @@
                 <h3>Sem Obras</h3>
                 <p>Sem necessidade de instalar placas, furar telhado ou fazer qualquer obra no seu imóvel.</p>
             </div>
-
             <div class="advantage-card">
                 <div class="icon-box">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
@@ -253,7 +275,6 @@
                 <h3>Economia Garantida</h3>
                 <p>Economize até 20% na sua conta de energia todos os meses, garantido em contrato.</p>
             </div>
-
             <div class="advantage-card">
                 <div class="icon-box">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
@@ -267,8 +288,21 @@
         </div>
     </section>
 
+    <section class="info-section">
+        <h2 class="section-title">Como funciona a assinatura de energia solar?</h2>
+        <div class="info-content">
+            <p>
+                A Solee possui uma usina solar localizada no <strong>Sertão de Alagoas</strong>, em <strong>Maravilha</strong>. Essa usina é responsável por captar a luz do sol e gerar créditos de energia que são compensados na fatura de energia do seu imóvel ou estabelecimento comercial.
+            </p>
+            <br>
+            <p>
+                Ao realizar a adesão à assinatura de energia solar, você passa a fazer parte de uma <strong>Associação Civil</strong> que detém a usina solar e rateia os créditos gerados. Dessa forma, você recebe uma parcela desses créditos proporcional ao seu consumo, garantindo que você tenha <strong>economia mensal</strong> na sua conta de luz.
+            </p>
+        </div>
+    </section>
+
     <section class="steps-section">
-        <h2 class="section-title">Como funciona?</h2>
+        <h2 class="section-title">Passo a Passo da Economia</h2>
         <div class="steps-container">
             <div class="step-card">
                 <div class="step-number">1</div>
@@ -300,13 +334,13 @@
         </div>
         <div class="faq-item">
             <button class="faq-question">Vou ter duas contas? <span>▼</span></button>
-            <div class="faq-answer">Você receberá o boleto da Solee e a conta da distribuidora com as taxas mínimas. A soma das duas será menor do que você pagava antes.</div>
+            <div class="faq-answer">Não, você não terá duas contas — com a Fatura Única Solee você recebe apenas um boleto, que já reúne sua energia com desconto e os encargos obrigatórios da distribuidora; você paga a Solee e nós quitamos a conta da Equatorial por você, trazendo mais praticidade, controle e tranquilidade, com um vencimento inteligente cerca de 3 dias antes da Equatorial para garantir o processamento do pagamento sem risco de atraso ou preocupação.</div>
         </div>
     </section>
 
     <footer>
         <img src="logo.png" alt="Solee">
-        <p>Solee Energia Solar &copy; 2024</p>
+        <p>Solee Energia Solar &copy; 2026</p>
     </footer>
 
     <a href="#" onclick="redirecionarWhatsapp()" class="whatsapp-float">
@@ -321,6 +355,7 @@
             const resDiv = document.getElementById('resultado');
             const ecoSpan = document.getElementById('valorEconomia');
             if (input > 0) {
+                // MANTIDO 15% (0.15) CONFORME SOLICITADO
                 const eco = input * 0.15;
                 ecoSpan.innerText = eco.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
                 resDiv.style.display = 'block';
